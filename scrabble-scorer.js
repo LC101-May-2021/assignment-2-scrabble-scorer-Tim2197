@@ -97,25 +97,10 @@ function transform(object) {
 
 newPointStructure = transform(oldPointStructure);
 
-let simpleScorer = {
-  name: 'Simple Score',
-  description: 'Each letter is worth 1 point.',
-  scoringFunction: simpleScore(word)
-}
-
-let vowelScorer = {
-  name: 'Bonus Vowels',
-  description: 'Vowels are 3 pts, consonants are 1 pt.',
-  scoringFunction: vowelBonusScore(word)
-}
-
-let scrabbleScorer = {
-  name: 'Scrabble Score',
-  desc: 'The traditional scoring algorithm.',
-  scoringFunction: scrabbleScore(word)
-}
-
-scoringAlgorithms = [simpleScorer, vowelScorer, scrabbleScorer];
+scoringAlgorithms = [ 
+Object({ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: 0 }), 
+Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: 0 }), 
+Object({ name: 'Scrabble Score', desc: 'The traditional scoring algorithm.', scoringFunction: 0 }) ];
 
 function runProgram() {
   word = initialPrompt();
