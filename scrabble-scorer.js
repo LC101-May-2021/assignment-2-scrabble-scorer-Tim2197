@@ -88,7 +88,7 @@ function transform(object) {
   let newObj = {};
   for (let key in object){
     for (let i = 0;i<object[key].length;i++){
-     newObj[object[key][i]] = key;
+     newObj[object[key][i]] = Number(key);
     }
   }
   return newObj;
@@ -99,7 +99,8 @@ newPointStructure = transform(oldPointStructure);
 scoringAlgorithms = [ 
 Object({ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore(word) }), 
 Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: vowelBonusScore(word) }), 
-Object({ name: 'Scrabble Score', desc: 'The traditional scoring algorithm.', scoringFunction: scrabbleScore(word) }) ];
+Object({ name: 'Scrabble Score', desc: 'The traditional scoring algorithm.', scoringFunction: scrabbleScore(word) }) 
+];
 
 function runProgram() {
   word = initialPrompt();
@@ -115,6 +116,7 @@ function runProgram() {
     runProgram();
   }
   console.log(`Score for '${word}' is: ${letterPoints}`);
+  console.log(newPointStructure)
 }
 
 // Don't write any code below this line //
