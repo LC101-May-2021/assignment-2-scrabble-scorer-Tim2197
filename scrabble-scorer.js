@@ -83,7 +83,7 @@ function transform(object) {
 
 let newPointStructure = transform(oldPointStructure);
 
-function scrabbleScorer(word) {
+function scrabbleScore(word) {
   word = word.toLowerCase();
   let arr1 = word.split('');
   let letterPoints = 0;
