@@ -98,9 +98,9 @@ function scrabbleScore(word) {
 }
 
 let scoringAlgorithms = [];
-let simpleScorer = { name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore(word) };
-let vowelScorer = { name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: vowelBonusScore(word) };
-let scrabbleScorer = { name: 'Scrabble Score', desc: 'The traditional scoring algorithm.', scoringFunction: scrabbleScore(word)};
+let simpleScorer = { name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore};
+let vowelScorer = { name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: vowelBonusScore};
+let scrabbleScorer = { name: 'Scrabble Score', desc: 'The traditional scoring algorithm.', scoringFunction: scrabbleScore};
 scoringAlgorithms.push(simpleScorer)
 scoringAlgorithms.push(vowelScorer)
 scoringAlgorithms.push(scrabbleScorer)
