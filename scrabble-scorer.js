@@ -96,11 +96,15 @@ let scrabbleScore = function(word) {
   return letterPoints;
 }
 
-let scoringAlgorithms = [ 
-Object({ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore(word) }), 
-Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: vowelBonusScore(word) }), 
-Object({ name: 'Scrabble Score', desc: 'The traditional scoring algorithm.', scoringFunction: scrabbleScore(word) }) 
-];
+let scoringAlgorithms = [];
+let simpleObj = { name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore(word) };
+let vowelObj = { name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: vowelBonusScore(word) };
+let scrabbleObj = { name: 'Scrabble Score', desc: 'The traditional scoring algorithm.', scoringFunction: scrabbleScore(word)};
+scoringAlgorithms.push(simpleObj)
+scoringAlgorithms.push(vowelObj)
+scoringAlgorithms.push(scrabbleObj)
+console.log(scoringAlgorithms)
+
 
 function runProgram() {
   word = initialPrompt();
