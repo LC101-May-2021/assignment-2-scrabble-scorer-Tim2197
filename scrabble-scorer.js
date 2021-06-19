@@ -81,22 +81,7 @@ function transform(object) {
   return newObj;
 }
 
-
-function transform(object) {
-  let newObj = {};
-  for (let key in object){
-    for (let i = 0;i<object[key].length;i++){
-     newObj[object[key][i]] = Number(key);
-    }
-  }
-  return newObj;
-}
-
 let newPointStructure = transform(oldPointStructure);
-for(i=0;i<Object.keys(newPointStructure).length;i++){
-  
-}
-
 
 let scrabbleScore = function(word) {
   word = word.toUpperCase();
