@@ -70,6 +70,18 @@ Enter 0, 1, or 2: `)
   return userInput;
 }
 
+
+function transform(object) {
+  let newObj = {};
+  for (let key in object){
+    for (let i = 0;i<object[key].length;i++){
+     newObj[object[key][i].toLowerCase()] = Number(key);
+    }
+  }
+  return newObj;
+}
+
+
 function transform(object) {
   let newObj = {};
   for (let key in object){
@@ -81,6 +93,10 @@ function transform(object) {
 }
 
 let newPointStructure = transform(oldPointStructure);
+for(i=0;i<Object.keys(newPointStructure).length;i++){
+  
+}
+
 
 let scrabbleScore = function(word) {
   word = word.toUpperCase();
@@ -103,8 +119,6 @@ let scrabbleScorer = { name: 'Scrabble Score', desc: 'The traditional scoring al
 scoringAlgorithms.push(simpleScorer)
 scoringAlgorithms.push(vowelScorer)
 scoringAlgorithms.push(scrabbleScorer)
-console.log(scoringAlgorithms)
-
 
 function runProgram() {
   word = initialPrompt();
