@@ -28,19 +28,6 @@ function oldScrabbleScorer(word) {
 	return letterPoints;
  }
 
-let scrabbleScore = function(word) {
-  word = word.toUpperCase();
-  let arr1 = word.split('');
-  let letterPoints = 0;
-  let numberedPoint;
-  for(let i = 0; i<word.length; i++) {
-    if(Object.keys(newPointStructure).includes(arr1[i])){
-      numberedPoint = Number(newPointStructure[arr1[i]]);
-      letterPoints = letterPoints + numberedPoint;
-    }
-  }
-  return letterPoints;
-}
 
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
@@ -74,6 +61,7 @@ function vowelBonusScore(word){
 return letterPoints;
 }
 
+
 function scorerPrompt() {
   let userInput = input.question (`Which scoring algorithm would you like to use?
 
@@ -96,6 +84,20 @@ function transform(object) {
 
 newPointStructure = transform(oldPointStructure);
 
+let scrabbleScore = function(word) {
+  word = word.toUpperCase();
+  let arr1 = word.split('');
+  let letterPoints = 0;
+  let numberedPoint;
+  for(let i = 0; i<word.length; i++) {
+    if(Object.keys(newPointStructure).includes(arr1[i])){
+      numberedPoint = Number(newPointStructure[arr1[i]]);
+      letterPoints = letterPoints + numberedPoint;
+    }
+  }
+  return letterPoints;
+}
+
 scoringAlgorithms = [ 
 Object({ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore(word) }), 
 Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: vowelBonusScore(word) }), 
@@ -116,7 +118,6 @@ function runProgram() {
     runProgram();
   }
   console.log(`Score for '${word}' is: ${letterPoints}`);
-  console.log(newPointStructure)
 }
 
 // Don't write any code below this line //
