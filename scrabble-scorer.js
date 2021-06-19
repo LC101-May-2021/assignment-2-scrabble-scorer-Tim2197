@@ -1,7 +1,6 @@
 // inspired by https://exercism.io/tracks/javascript/exercises/etl/solutions/91f99a3cca9548cebe5975d7ebca6a85
 let newPointStructure;
 let word = '';
-let scoringAlgorithms = [];
 const input = require("readline-sync");
 const vowelList = ['A', 'E', 'I', 'O', 'U']
 const consonantList = ['B','C', 'D', 'F', 'G', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'S', 'T', 'V', 'X', 'Z', 'H', 'R', 'W', 'Y'];
@@ -98,7 +97,7 @@ let scrabbleScore = function(word) {
   return letterPoints;
 }
 
-scoringAlgorithms = [ 
+let scoringAlgorithms = [ 
 Object({ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore(word) }), 
 Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: vowelBonusScore(word) }), 
 Object({ name: 'Scrabble Score', desc: 'The traditional scoring algorithm.', scoringFunction: scrabbleScore(word) }) 
