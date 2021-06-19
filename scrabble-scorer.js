@@ -1,5 +1,4 @@
 // inspired by https://exercism.io/tracks/javascript/exercises/etl/solutions/91f99a3cca9548cebe5975d7ebca6a85
-let newPointStructure;
 let word = '';
 const input = require("readline-sync");
 const vowelList = ['A', 'E', 'I', 'O', 'U']
@@ -75,13 +74,13 @@ function transform(object) {
   let newObj = {};
   for (let key in object){
     for (let i = 0;i<object[key].length;i++){
-     newObj[String(object[key][i])] = Number(key);
+     newObj[object[key][i]] = Number(key);
     }
   }
   return newObj;
 }
 
-newPointStructure = transform(oldPointStructure);
+let newPointStructure = transform(oldPointStructure);
 
 let scrabbleScore = function(word) {
   word = word.toUpperCase();
