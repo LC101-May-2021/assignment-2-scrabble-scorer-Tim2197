@@ -89,7 +89,6 @@ function transform(object) {
   for (let key in object){
     for (let i = 0;i<object[key].length;i++){
      newObj[object[key][i]] = key;
-     newObj[' '] = 0;
     }
   }
   return newObj;
